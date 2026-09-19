@@ -2,6 +2,9 @@
 
 API REST de um gerenciador de tarefas, feita em **Java + Spring Boot**, para a disciplina de Programação Web Backend.
 
+- **Nome:** Igor Lohan Noronha Nascimento
+- **RGM:** 48094897
+
 A ideia deste README é explicar o projeto do jeito que a gente entende quando está começando no backend: o que cada parte faz, como subir o banco e como testar no Insomnia ou no Postman.
 
 ## O que é backend?
