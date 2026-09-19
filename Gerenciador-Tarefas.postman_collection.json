@@ -19,7 +19,7 @@
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/projeto",
+            "url": "{{baseUrl}}/projetos",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nome\": \"Projeto Web\",\n  \"descricao\": \"Atividade de Programação Web Backend\"\n}"
@@ -30,21 +30,21 @@
           "name": "RF02 - Listar projetos",
           "request": {
             "method": "GET",
-            "url": "{{baseUrl}}/projeto"
+            "url": "{{baseUrl}}/projetos"
           }
         },
         {
           "name": "Consultar projeto por id",
           "request": {
             "method": "GET",
-            "url": "{{baseUrl}}/projeto/1"
+            "url": "{{baseUrl}}/projetos/1"
           }
         },
         {
           "name": "RF12 - Projeto inexistente (404)",
           "request": {
             "method": "GET",
-            "url": "{{baseUrl}}/projeto/99999"
+            "url": "{{baseUrl}}/projetos/99999"
           }
         },
         {
@@ -52,7 +52,7 @@
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/projeto/1",
+            "url": "{{baseUrl}}/projetos/1",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nome\": \"Projeto Web Atualizado\",\n  \"descricao\": \"Descrição nova do projeto\"\n}"
@@ -63,7 +63,7 @@
           "name": "Remover projeto",
           "request": {
             "method": "DELETE",
-            "url": "{{baseUrl}}/projeto/1"
+            "url": "{{baseUrl}}/projetos/1"
           }
         }
       ]
@@ -76,7 +76,7 @@
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/responsavel",
+            "url": "{{baseUrl}}/responsaveis",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nome\": \"Igor Lima\",\n  \"email\": \"igor@email.com\"\n}"
@@ -87,14 +87,14 @@
           "name": "RF04 - Listar responsáveis",
           "request": {
             "method": "GET",
-            "url": "{{baseUrl}}/responsavel"
+            "url": "{{baseUrl}}/responsaveis"
           }
         },
         {
           "name": "Consultar responsável por id",
           "request": {
             "method": "GET",
-            "url": "{{baseUrl}}/responsavel/1"
+            "url": "{{baseUrl}}/responsaveis/1"
           }
         },
         {
@@ -102,7 +102,7 @@
           "request": {
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/responsavel/1",
+            "url": "{{baseUrl}}/responsaveis/1",
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nome\": \"Igor Lima Silva\",\n  \"email\": \"igor.silva@email.com\"\n}"
@@ -113,7 +113,7 @@
           "name": "Remover responsável",
           "request": {
             "method": "DELETE",
-            "url": "{{baseUrl}}/responsavel/1"
+            "url": "{{baseUrl}}/responsaveis/1"
           }
         }
       ]

@@ -131,7 +131,7 @@ Faça assim em todo `POST` e `PUT`:
 6. Deixe **Params** vazio
 7. Envie
 
-A URL deve ficar só `http://localhost:8080/projeto`, sem `?nome=...` no final.
+A URL deve ficar só `http://localhost:8080/projetos`, sem `?nome=...` no final.
 
 ## Como testar no Postman
 
@@ -143,7 +143,7 @@ Faça assim em todo `POST` e `PUT`:
 
 1. Abra o Postman e clique em **New** → **HTTP Request** (ou no `+` para uma request nova)
 2. Em cima, escolha o método (`POST`, `GET`, `PUT` ou `DELETE`)
-3. Cole a URL, por exemplo `http://localhost:8080/projeto`
+3. Cole a URL, por exemplo `http://localhost:8080/projetos`
 4. Abra a aba **Body** (não Params e não Authorization)
 5. Marque **raw**
 6. No seletor da direita, escolha **JSON** (não Text)
@@ -152,7 +152,7 @@ Faça assim em todo `POST` e `PUT`:
 8. Deixe a aba **Params** vazia
 9. Clique em **Send**
 
-A URL, no campo de cima, deve ficar só `http://localhost:8080/projeto`. Se aparecer `?nome=` ou `?{`, o JSON foi para o lugar errado.
+A URL, no campo de cima, deve ficar só `http://localhost:8080/projetos`. Se aparecer `?nome=` ou `?{`, o JSON foi para o lugar errado.
 
 Para `GET` e `DELETE`, não precisa de Body. Só método + URL + **Send**.
 
@@ -162,7 +162,7 @@ Os JSONs abaixo servem no Insomnia e no Postman. Também dá para importar `Gere
 
 ### Projeto
 
-`POST http://localhost:8080/projeto`
+`POST http://localhost:8080/projetos`
 
 ```json
 {
@@ -173,7 +173,7 @@ Os JSONs abaixo servem no Insomnia e no Postman. Também dá para importar `Gere
 
 ### Responsável
 
-`POST http://localhost:8080/responsavel`
+`POST http://localhost:8080/responsaveis`
 
 ```json
 {
@@ -203,35 +203,35 @@ Troque `projetoId` e `responsavelId` pelos ids reais. `responsavelId` pode ser o
 
 A base é sempre `http://localhost:8080`.
 
-### Projeto — `/projeto`
+### Projeto — `/projetos`
 
-| Método | URL | O que faz |
+| Método | URL | Sucesso |
 |---|---|---|
-| POST | `/projeto` | Cadastra |
-| GET | `/projeto` | Lista todos |
-| GET | `/projeto/1` | Busca pelo id |
-| PUT | `/projeto/1` | Atualiza |
-| DELETE | `/projeto/1` | Exclui (só se não tiver tarefa) |
+| POST | `/projetos` | 201 |
+| GET | `/projetos` | 200 |
+| GET | `/projetos/1` | 200 |
+| PUT | `/projetos/1` | 200 |
+| DELETE | `/projetos/1` | 204 |
 
-### Responsável — `/responsavel`
+### Responsável — `/responsaveis`
 
-| Método | URL | O que faz |
+| Método | URL | Sucesso |
 |---|---|---|
-| POST | `/responsavel` | Cadastra |
-| GET | `/responsavel` | Lista todos |
-| GET | `/responsavel/1` | Busca pelo id |
-| PUT | `/responsavel/1` | Atualiza |
-| DELETE | `/responsavel/1` | Exclui (só se não tiver tarefa) |
+| POST | `/responsaveis` | 201 |
+| GET | `/responsaveis` | 200 |
+| GET | `/responsaveis/1` | 200 |
+| PUT | `/responsaveis/1` | 200 |
+| DELETE | `/responsaveis/1` | 204 |
 
 ### Tarefa — `/tarefas`
 
-| Método | URL | O que faz |
-|---|---|---|
-| POST | `/tarefas` | Cadastra (status `NOVA` automático) |
-| GET | `/tarefas` | Lista todas |
-| GET | `/tarefas/1` | Busca pelo id |
-| PUT | `/tarefas/1` | Atualiza (pode trocar status e responsável) |
-| DELETE | `/tarefas/1` | Exclui |
+| Método | URL | Sucesso | Falha |
+|---|---|---|---|
+| POST | `/tarefas` | 201 + Location | — |
+| GET | `/tarefas` | 200 | — |
+| GET | `/tarefas/1` | 200 | 404 |
+| PUT | `/tarefas/1` | 200 | 404 |
+| DELETE | `/tarefas/1` | 204 | 404 |
 
 Filtros opcionais na listagem:
 

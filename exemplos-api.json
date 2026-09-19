@@ -2,7 +2,7 @@
   "projetos": [
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/projeto",
+      "url": "http://localhost:8080/projetos",
       "body": {
         "nome": "Projeto Web",
         "descricao": "Atividade de Programação Web Backend"
@@ -10,7 +10,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/projeto",
+      "url": "http://localhost:8080/projetos",
       "body": {
         "nome": "App de Finanças",
         "descricao": "Controle de gastos pessoais e metas mensais"
@@ -18,7 +18,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/projeto",
+      "url": "http://localhost:8080/projetos",
       "body": {
         "nome": "Loja Virtual",
         "descricao": "E-commerce de produtos eletrônicos"
@@ -26,7 +26,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/projeto",
+      "url": "http://localhost:8080/projetos",
       "body": {
         "nome": "Portal da Faculdade",
         "descricao": "Área do aluno com notas, faltas e horários"
@@ -34,7 +34,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/projeto",
+      "url": "http://localhost:8080/projetos",
       "body": {
         "nome": "Agenda Médica",
         "descricao": "Sistema de consultas e prontuário básico"
@@ -44,7 +44,7 @@
   "responsaveis": [
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/responsavel",
+      "url": "http://localhost:8080/responsaveis",
       "body": {
         "nome": "Igor Lima",
         "email": "igor@email.com"
@@ -52,7 +52,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/responsavel",
+      "url": "http://localhost:8080/responsaveis",
       "body": {
         "nome": "Ana Souza",
         "email": "ana.souza@email.com"
@@ -60,7 +60,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/responsavel",
+      "url": "http://localhost:8080/responsaveis",
       "body": {
         "nome": "Carlos Mendes",
         "email": "carlos.mendes@email.com"
@@ -68,7 +68,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/responsavel",
+      "url": "http://localhost:8080/responsaveis",
       "body": {
         "nome": "Beatriz Rocha",
         "email": "beatriz.rocha@email.com"
@@ -76,7 +76,7 @@
     },
     {
       "metodo": "POST",
-      "url": "http://localhost:8080/responsavel",
+      "url": "http://localhost:8080/responsaveis",
       "body": {
         "nome": "Diego Martins",
         "email": "diego.martins@email.com"

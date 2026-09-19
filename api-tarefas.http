@@ -4,7 +4,7 @@
 @tarefaId = 1
 
 ### RF01 - Cadastrar projeto
-POST {{baseUrl}}/projeto
+POST {{baseUrl}}/projetos
 Content-Type: application/json
 
 {
@@ -13,16 +13,16 @@ Content-Type: application/json
 }
 
 ### RF02 - Listar projetos
-GET {{baseUrl}}/projeto
+GET {{baseUrl}}/projetos
 
 ### Consultar projeto pelo id
-GET {{baseUrl}}/projeto/{{projetoId}}
+GET {{baseUrl}}/projetos/{{projetoId}}
 
 ### RF12 - Projeto inexistente deve retornar 404
-GET {{baseUrl}}/projeto/99999
+GET {{baseUrl}}/projetos/99999
 
 ### Atualizar projeto
-PUT {{baseUrl}}/projeto/{{projetoId}}
+PUT {{baseUrl}}/projetos/{{projetoId}}
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ### RF03 - Cadastrar responsável
-POST {{baseUrl}}/responsavel
+POST {{baseUrl}}/responsaveis
 Content-Type: application/json
 
 {
@@ -40,13 +40,13 @@ Content-Type: application/json
 }
 
 ### RF04 - Listar responsáveis
-GET {{baseUrl}}/responsavel
+GET {{baseUrl}}/responsaveis
 
 ### Consultar responsável pelo id
-GET {{baseUrl}}/responsavel/{{responsavelId}}
+GET {{baseUrl}}/responsaveis/{{responsavelId}}
 
 ### Atualizar responsável
-PUT {{baseUrl}}/responsavel/{{responsavelId}}
+PUT {{baseUrl}}/responsaveis/{{responsavelId}}
 Content-Type: application/json
 
 {
@@ -128,7 +128,7 @@ Content-Type: application/json
 DELETE {{baseUrl}}/tarefas/{{tarefaId}}
 
 ### Remover responsável
-DELETE {{baseUrl}}/responsavel/{{responsavelId}}
+DELETE {{baseUrl}}/responsaveis/{{responsavelId}}
 
 ### Remover projeto
-DELETE {{baseUrl}}/projeto/{{projetoId}}
+DELETE {{baseUrl}}/projetos/{{projetoId}}

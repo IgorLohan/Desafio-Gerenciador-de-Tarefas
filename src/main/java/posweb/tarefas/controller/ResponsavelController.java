@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/responsavel")
+@RequestMapping({"/responsaveis", "/responsavel"})
 public class ResponsavelController {
 
     private final ResponsavelService service;

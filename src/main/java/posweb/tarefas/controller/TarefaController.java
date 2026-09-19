@@ -3,13 +3,16 @@ package posweb.tarefas.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import posweb.tarefas.domain.PrioridadeTarefa;
 import posweb.tarefas.domain.StatusTarefa;
 import posweb.tarefas.dto.TarefaCadastroRequest;
 import posweb.tarefas.dto.TarefaResponse;
 import posweb.tarefas.service.TarefaService;
 
+import java.net.URI;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -20,9 +23,13 @@ public class TarefaController {
     private final TarefaService service;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public TarefaResponse cadastrarTarefa(@RequestBody @Valid TarefaCadastroRequest request) {
-        return service.cadastrarTarefa(request);
+    public ResponseEntity<TarefaResponse> cadastrarTarefa(@RequestBody @Valid TarefaCadastroRequest request) {
+        TarefaResponse criada = service.cadastrarTarefa(request);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(criada.id())
+                .toUri();
+        return ResponseEntity.created(location).body(criada);
     }
 
     @GetMapping
