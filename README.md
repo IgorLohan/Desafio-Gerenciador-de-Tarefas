@@ -2,7 +2,7 @@
 
 API REST de um gerenciador de tarefas, feita em **Java + Spring Boot**, para a disciplina de Programação Web Backend.
 
-A ideia deste README é explicar o projeto do jeito que a gente entende quando está começando no backend: o que cada parte faz, como subir o banco e como testar no Insomnia.
+A ideia deste README é explicar o projeto do jeito que a gente entende quando está começando no backend: o que cada parte faz, como subir o banco e como testar no Insomnia ou no Postman.
 
 ## O que é backend?
 
@@ -127,7 +127,32 @@ Faça assim em todo `POST` e `PUT`:
 
 A URL deve ficar só `http://localhost:8080/projeto`, sem `?nome=...` no final.
 
+## Como testar no Postman
+
+O Postman funciona igual ao Insomnia: manda HTTP para a API e mostra a resposta. A diferença é só o visual das abas.
+
+O erro mais comum no começo: colocar o JSON em **Params**. Isso também dá `400`.
+
+Faça assim em todo `POST` e `PUT`:
+
+1. Abra o Postman e clique em **New** → **HTTP Request** (ou no `+` para uma request nova)
+2. Em cima, escolha o método (`POST`, `GET`, `PUT` ou `DELETE`)
+3. Cole a URL, por exemplo `http://localhost:8080/projeto`
+4. Abra a aba **Body** (não Params e não Authorization)
+5. Marque **raw**
+6. No seletor da direita, escolha **JSON** (não Text)
+   - Isso já coloca o header `Content-Type: application/json`
+7. Cole o JSON na caixa
+8. Deixe a aba **Params** vazia
+9. Clique em **Send**
+
+A URL, no campo de cima, deve ficar só `http://localhost:8080/projeto`. Se aparecer `?nome=` ou `?{`, o JSON foi para o lugar errado.
+
+Para `GET` e `DELETE`, não precisa de Body. Só método + URL + **Send**.
+
 Cadastre **projeto** e **responsável** primeiro. Depois use os `id` que voltaram para criar a tarefa.
+
+Os JSONs abaixo servem no Insomnia e no Postman.
 
 ### Projeto
 
@@ -222,6 +247,6 @@ Uma tarefa sempre aponta para um projeto. Ela pode existir sem responsável.
 
 - **`connection timeout` no pgAdmin:** o serviço do PostgreSQL está parado. Inicie o `postgresql-x64-18`.
 - **API não sobe:** banco `tarefas` não existe, ou usuário/senha em `application.properties` está errado.
-- **`400 Bad Request` no Insomnia:** JSON foi para Params em vez do Body, ou falta campo obrigatório (`nome`, `titulo`, `projetoId`).
+- **`400 Bad Request` no Insomnia/Postman:** JSON foi para Params em vez do Body, o Body não está em **raw + JSON**, ou falta campo obrigatório (`nome`, `titulo`, `projetoId`).
 - **`404`:** o id não existe.
 - **`409` ao deletar projeto/responsável:** ainda existe tarefa ligada a ele.
