@@ -96,6 +96,20 @@ Content-Type: application/json
   "responsavelId": 1
 }
 
+### Cancelar tarefa
+PUT {{baseUrl}}/tarefas/{{tarefaId}}
+Content-Type: application/json
+
+{
+  "titulo": "Montar relatório",
+  "descricao": "Relatório semanal do projeto",
+  "status": "CANCELADA",
+  "prioridade": "ALTA",
+  "prazo": "2026-09-25",
+  "projetoId": 1,
+  "responsavelId": 1
+}
+
 ### RF11 - Concluir tarefa (preenche concluida_em automaticamente)
 PUT {{baseUrl}}/tarefas/{{tarefaId}}
 Content-Type: application/json

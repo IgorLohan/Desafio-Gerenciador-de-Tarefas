@@ -74,7 +74,7 @@ Por que Request e Response separados da entidade? Para não expor o banco direto
 
 Enums da tarefa:
 
-- **Status:** `NOVA`, `EM_ANDAMENTO`, `CONCLUIDA`
+- **Status:** `NOVA`, `EM_ANDAMENTO`, `CONCLUIDA`, `CANCELADA`
 - **Prioridade:** `BAIXA`, `MEDIA`, `ALTA`
 
 ## Como rodar o projeto
