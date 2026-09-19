@@ -1,12 +1,10 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import posweb.tarefas.projeto.Projeto;
-import posweb.tarefas.responsavel.Responsavel;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -53,8 +51,8 @@ public class Tarefa {
     @JoinColumn(name = "responsavel_id")
     private Responsavel responsavel;
 
-    Tarefa(String titulo, String descricao, StatusTarefa status, PrioridadeTarefa prioridade,
-           LocalDate prazo, Projeto projeto, Responsavel responsavel) {
+    public Tarefa(String titulo, String descricao, StatusTarefa status, PrioridadeTarefa prioridade,
+                  LocalDate prazo, Projeto projeto, Responsavel responsavel) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.status = status;

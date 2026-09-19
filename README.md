@@ -53,16 +53,22 @@ As partes opcionais do enunciado (etiqueta e comentário) **não** entram neste 
 
 ## Como o código está organizado
 
-Cada recurso (projeto, responsável, tarefa) tem as mesmas camadas. Isso é o padrão clássico de API Spring.
+Os pacotes são separados **por camada**, como o enunciado pede:
 
-| Arquivo | Papel |
+| Pacote | Papel |
 |---|---|
-| `*Controller` | Porta de entrada da API. Define a URL e o método HTTP. |
-| `*Service` / `*ServiceImpl` | Regras de negócio. |
-| `*Repository` | Acesso ao banco (find, save, delete). |
-| Entidade (`Projeto`, `Tarefa`, `Responsavel`) | Representa a tabela no banco. |
-| `*CadastroRequest` | JSON que a API **recebe**. |
-| `*Response` | JSON que a API **devolve**. |
+| `controller` | Porta de entrada da API. Só recebe o HTTP e chama o service. |
+| `service` | Regras de negócio. |
+| `repository` | Acesso ao banco (find, save, delete). |
+| `domain` | Entidades, enums e a exceção de recurso não encontrado. |
+| `dto` | JSON que a API recebe (`*Request`) e devolve (`*Response`). |
+
+O controller **não** conversa com o repositório. A injeção é pelo construtor (`@RequiredArgsConstructor`), sem `@Autowired` em campo.
+
+Para testar todas as operações, use:
+
+- `Gerenciador-Tarefas.postman_collection.json` — importe no Postman (Import)
+- `api-tarefas.http` — abra no IntelliJ e clique em Run em cada request
 
 Por que Request e Response separados da entidade? Para não expor o banco direto na API e mandar só o que o cliente precisa.
 
@@ -152,7 +158,7 @@ Para `GET` e `DELETE`, não precisa de Body. Só método + URL + **Send**.
 
 Cadastre **projeto** e **responsável** primeiro. Depois use os `id` que voltaram para criar a tarefa.
 
-Os JSONs abaixo servem no Insomnia e no Postman. Todos eles também estão no arquivo `exemplos-api.json` — copie só o conteúdo de `body`.
+Os JSONs abaixo servem no Insomnia e no Postman. Também dá para importar `Gerenciador-Tarefas.postman_collection.json` ou abrir `api-tarefas.http`. Os bodies extras estão em `exemplos-api.json`.
 
 ### Projeto
 

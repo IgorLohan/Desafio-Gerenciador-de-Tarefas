@@ -1,4 +1,7 @@
-package posweb.tarefas.projeto;
+package posweb.tarefas.service;
+
+import posweb.tarefas.dto.ProjetoCadastroRequest;
+import posweb.tarefas.dto.ProjetoResponse;
 
 import java.util.List;
 

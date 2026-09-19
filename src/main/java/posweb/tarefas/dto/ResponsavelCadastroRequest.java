@@ -1,4 +1,4 @@
-package posweb.tarefas.responsavel;
+package posweb.tarefas.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,4 +1,4 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.domain;
 
 public enum PrioridadeTarefa {
     BAIXA,

@@ -1,4 +1,4 @@
-package posweb.tarefas.projeto;
+package posweb.tarefas.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

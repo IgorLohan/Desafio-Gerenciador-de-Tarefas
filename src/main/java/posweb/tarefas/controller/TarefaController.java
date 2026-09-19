@@ -1,9 +1,14 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import posweb.tarefas.domain.PrioridadeTarefa;
+import posweb.tarefas.domain.StatusTarefa;
+import posweb.tarefas.dto.TarefaCadastroRequest;
+import posweb.tarefas.dto.TarefaResponse;
+import posweb.tarefas.service.TarefaService;
 
 import java.util.List;
 

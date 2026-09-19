@@ -1,11 +1,10 @@
-package posweb.tarefas.projeto;
+package posweb.tarefas.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import posweb.tarefas.tarefa.Tarefa;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class Projeto {
     @OneToMany(mappedBy = "projeto")
     private List<Tarefa> tarefas = new ArrayList<>();
 
-    Projeto(String nome, String descricao) {
+    public Projeto(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
     }

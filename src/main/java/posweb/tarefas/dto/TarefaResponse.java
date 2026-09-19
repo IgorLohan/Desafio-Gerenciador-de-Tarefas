@@ -1,4 +1,7 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.dto;
+
+import posweb.tarefas.domain.PrioridadeTarefa;
+import posweb.tarefas.domain.StatusTarefa;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

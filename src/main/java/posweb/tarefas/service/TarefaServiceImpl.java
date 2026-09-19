@@ -1,12 +1,18 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import posweb.tarefas.comum.RecursoNaoEncontradoException;
-import posweb.tarefas.projeto.Projeto;
-import posweb.tarefas.projeto.ProjetoRepository;
-import posweb.tarefas.responsavel.Responsavel;
-import posweb.tarefas.responsavel.ResponsavelRepository;
+import posweb.tarefas.domain.PrioridadeTarefa;
+import posweb.tarefas.domain.Projeto;
+import posweb.tarefas.domain.RecursoNaoEncontradoException;
+import posweb.tarefas.domain.Responsavel;
+import posweb.tarefas.domain.StatusTarefa;
+import posweb.tarefas.domain.Tarefa;
+import posweb.tarefas.dto.TarefaCadastroRequest;
+import posweb.tarefas.dto.TarefaResponse;
+import posweb.tarefas.repository.ProjetoRepository;
+import posweb.tarefas.repository.ResponsavelRepository;
+import posweb.tarefas.repository.TarefaRepository;
 
 import java.util.List;
 

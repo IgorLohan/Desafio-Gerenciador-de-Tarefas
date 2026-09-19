@@ -1,0 +1,120 @@
+@baseUrl = http://localhost:8080
+@projetoId = 1
+@responsavelId = 1
+@tarefaId = 1
+
+### RF01 - Cadastrar projeto
+POST {{baseUrl}}/projeto
+Content-Type: application/json
+
+{
+  "nome": "Projeto Web",
+  "descricao": "Atividade de Programação Web Backend"
+}
+
+### RF02 - Listar projetos
+GET {{baseUrl}}/projeto
+
+### Consultar projeto pelo id
+GET {{baseUrl}}/projeto/{{projetoId}}
+
+### RF12 - Projeto inexistente deve retornar 404
+GET {{baseUrl}}/projeto/99999
+
+### Atualizar projeto
+PUT {{baseUrl}}/projeto/{{projetoId}}
+Content-Type: application/json
+
+{
+  "nome": "Projeto Web Atualizado",
+  "descricao": "Descrição nova do projeto"
+}
+
+### RF03 - Cadastrar responsável
+POST {{baseUrl}}/responsavel
+Content-Type: application/json
+
+{
+  "nome": "Igor Lima",
+  "email": "igor@email.com"
+}
+
+### RF04 - Listar responsáveis
+GET {{baseUrl}}/responsavel
+
+### Consultar responsável pelo id
+GET {{baseUrl}}/responsavel/{{responsavelId}}
+
+### Atualizar responsável
+PUT {{baseUrl}}/responsavel/{{responsavelId}}
+Content-Type: application/json
+
+{
+  "nome": "Igor Lima Silva",
+  "email": "igor.silva@email.com"
+}
+
+### RF05 - Cadastrar tarefa (status NOVA e data de criação pelo sistema)
+POST {{baseUrl}}/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Montar relatório",
+  "descricao": "Relatório semanal do projeto",
+  "prioridade": "ALTA",
+  "prazo": "2026-09-25",
+  "projetoId": 1,
+  "responsavelId": 1
+}
+
+### RF06 - Listar todas as tarefas
+GET {{baseUrl}}/tarefas
+
+### RF07 - Filtrar tarefas por status
+GET {{baseUrl}}/tarefas?status=NOVA
+
+### RF07 - Filtrar tarefas por status e projeto
+GET {{baseUrl}}/tarefas?status=NOVA&projetoId=1
+
+### RF08 - Consultar tarefa pelo id
+GET {{baseUrl}}/tarefas/{{tarefaId}}
+
+### RF12 - Tarefa inexistente deve retornar 404
+GET {{baseUrl}}/tarefas/99999
+
+### RF09 - Atualizar tarefa (troca de status e responsável)
+PUT {{baseUrl}}/tarefas/{{tarefaId}}
+Content-Type: application/json
+
+{
+  "titulo": "Montar relatório",
+  "descricao": "Relatório semanal do projeto",
+  "status": "EM_ANDAMENTO",
+  "prioridade": "ALTA",
+  "prazo": "2026-09-25",
+  "projetoId": 1,
+  "responsavelId": 1
+}
+
+### RF11 - Concluir tarefa (preenche concluida_em automaticamente)
+PUT {{baseUrl}}/tarefas/{{tarefaId}}
+Content-Type: application/json
+
+{
+  "titulo": "Montar relatório",
+  "descricao": "Relatório semanal do projeto",
+  "status": "CONCLUIDA",
+  "prioridade": "ALTA",
+  "prazo": "2026-09-25",
+  "projetoId": 1,
+  "responsavelId": 1
+}
+
+### RF10 - Remover tarefa
+DELETE {{baseUrl}}/tarefas/{{tarefaId}}
+
+### Remover responsável
+DELETE {{baseUrl}}/responsavel/{{responsavelId}}
+
+### Remover projeto
+DELETE {{baseUrl}}/projeto/{{projetoId}}

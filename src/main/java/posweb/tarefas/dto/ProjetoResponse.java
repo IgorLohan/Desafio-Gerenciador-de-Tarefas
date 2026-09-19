@@ -1,4 +1,4 @@
-package posweb.tarefas.projeto;
+package posweb.tarefas.dto;
 
 import java.time.LocalDateTime;
 

@@ -1,11 +1,15 @@
-package posweb.tarefas.responsavel;
+package posweb.tarefas.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import posweb.tarefas.comum.RecursoNaoEncontradoException;
-import posweb.tarefas.tarefa.TarefaRepository;
+import posweb.tarefas.domain.RecursoNaoEncontradoException;
+import posweb.tarefas.domain.Responsavel;
+import posweb.tarefas.dto.ResponsavelCadastroRequest;
+import posweb.tarefas.dto.ResponsavelResponse;
+import posweb.tarefas.repository.ResponsavelRepository;
+import posweb.tarefas.repository.TarefaRepository;
 
 import java.util.List;
 

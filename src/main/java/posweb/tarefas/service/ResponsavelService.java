@@ -1,4 +1,7 @@
-package posweb.tarefas.responsavel;
+package posweb.tarefas.service;
+
+import posweb.tarefas.dto.ResponsavelCadastroRequest;
+import posweb.tarefas.dto.ResponsavelResponse;
 
 import java.util.List;
 

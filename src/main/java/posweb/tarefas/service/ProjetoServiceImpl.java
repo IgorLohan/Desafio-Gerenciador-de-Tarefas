@@ -1,11 +1,15 @@
-package posweb.tarefas.projeto;
+package posweb.tarefas.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import posweb.tarefas.comum.RecursoNaoEncontradoException;
-import posweb.tarefas.tarefa.TarefaRepository;
+import posweb.tarefas.domain.Projeto;
+import posweb.tarefas.domain.RecursoNaoEncontradoException;
+import posweb.tarefas.dto.ProjetoCadastroRequest;
+import posweb.tarefas.dto.ProjetoResponse;
+import posweb.tarefas.repository.ProjetoRepository;
+import posweb.tarefas.repository.TarefaRepository;
 
 import java.util.List;
 
@@ -54,7 +58,7 @@ public class ProjetoServiceImpl implements ProjetoService {
         repository.delete(projeto);
     }
 
-    Projeto buscarEntidade(Long id) {
+    private Projeto buscarEntidade(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Projeto não encontrado"));
     }

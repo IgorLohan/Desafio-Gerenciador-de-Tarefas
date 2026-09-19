@@ -1,11 +1,10 @@
-package posweb.tarefas.responsavel;
+package posweb.tarefas.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import posweb.tarefas.tarefa.Tarefa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public class Responsavel {
     @OneToMany(mappedBy = "responsavel")
     private List<Tarefa> tarefas = new ArrayList<>();
 
-    Responsavel(String nome, String email) {
+    public Responsavel(String nome, String email) {
         this.nome = nome;
         this.email = email;
     }

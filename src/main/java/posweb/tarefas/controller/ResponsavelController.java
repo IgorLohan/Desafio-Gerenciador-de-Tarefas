@@ -1,9 +1,12 @@
-package posweb.tarefas.responsavel;
+package posweb.tarefas.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import posweb.tarefas.dto.ResponsavelCadastroRequest;
+import posweb.tarefas.dto.ResponsavelResponse;
+import posweb.tarefas.service.ResponsavelService;
 
 import java.util.List;
 

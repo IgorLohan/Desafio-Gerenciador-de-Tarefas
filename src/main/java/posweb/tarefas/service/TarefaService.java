@@ -1,4 +1,9 @@
-package posweb.tarefas.tarefa;
+package posweb.tarefas.service;
+
+import posweb.tarefas.domain.PrioridadeTarefa;
+import posweb.tarefas.domain.StatusTarefa;
+import posweb.tarefas.dto.TarefaCadastroRequest;
+import posweb.tarefas.dto.TarefaResponse;
 
 import java.util.List;
 
