@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "tb_projeto")
@@ -30,9 +28,6 @@ public class Projeto {
 
     @Column(name = "criado_em", nullable = false)
     private LocalDateTime criadoEm;
-
-    @OneToMany(mappedBy = "projeto")
-    private List<Tarefa> tarefas = new ArrayList<>();
 
     public Projeto(String nome, String descricao) {
         this.nome = nome;

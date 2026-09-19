@@ -40,16 +40,26 @@ Regras do modelo:
 
 As partes opcionais do enunciado (etiqueta e comentário) **não** entram neste projeto.
 
-## Tecnologias
+## Requisitos e dependências
 
 - Java 25
-- Spring Boot 4
-- Spring Web (API REST)
-- Spring Data JPA (acesso ao banco)
-- Hibernate (cria/atualiza as tabelas a partir das classes)
-- Validation (valida o JSON de entrada)
-- Lombok (menos código repetido nas entidades)
-- PostgreSQL (banco de dados)
+- Maven
+- Spring Boot 4.1.1
+- Spring Web
+- Spring Data JPA
+- Validation
+- Lombok
+- **Banco de dados:** PostgreSQL 18, banco `tarefas`
+
+## Banco de dados
+
+Foi usado **PostgreSQL**, no banco local `tarefas`.
+
+```
+jdbc:postgresql://localhost:5432/tarefas
+```
+
+As tabelas `tb_projeto`, `tb_responsavel` e `tb_tarefa` são criadas pelo Hibernate (`ddl-auto=update`).
 
 ## Como o código está organizado
 
@@ -239,6 +249,21 @@ Filtros opcionais na listagem:
 GET http://localhost:8080/tarefas?status=NOVA
 GET http://localhost:8080/tarefas?status=NOVA&projetoId=1
 ```
+
+## Roteiro de verificação (antes de entregar)
+
+Importe `Gerenciador-Tarefas.postman_collection.json` e rode **nessa ordem**:
+
+1. Criar um projeto e conferir o status **201**.
+2. Criar um responsável e conferir o status **201**.
+3. Criar **três** tarefas no projeto, com prioridades diferentes (ALTA, MEDIA, BAIXA).
+4. Listar as tarefas e conferir que as três aparecem com status **NOVA**.
+5. Filtrar por status e conferir que o filtro reduz o resultado (`?status=NOVA` e `?status=CONCLUIDA`).
+6. Consultar uma tarefa pelo id e conferir o corpo devolvido.
+7. Atualizar uma tarefa para **CONCLUIDA** e conferir que `concluidaEm` foi preenchida.
+8. Atribuir um responsável a uma tarefa e conferir na consulta.
+9. Remover uma tarefa e conferir o status **204**.
+10. Consultar a tarefa removida e conferir **404** com mensagem legível (`Tarefa não encontrada`).
 
 ## Relacionamento das tabelas
 

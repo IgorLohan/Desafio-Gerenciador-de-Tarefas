@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Gerenciador de Tarefas",
-    "description": "Coleção com todas as operações da API do desafio.",
+    "name": "Gerenciador de Tarefas — Roteiro de verificação",
+    "description": "Execute nesta ordem antes de entregar. Se passar inteiro, o núcleo do trabalho está fechado.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -12,194 +12,137 @@
   ],
   "item": [
     {
-      "name": "Projeto",
-      "item": [
-        {
-          "name": "RF01 - Cadastrar projeto",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/projetos",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"nome\": \"Projeto Web\",\n  \"descricao\": \"Atividade de Programação Web Backend\"\n}"
-            }
-          }
-        },
-        {
-          "name": "RF02 - Listar projetos",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/projetos"
-          }
-        },
-        {
-          "name": "Consultar projeto por id",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/projetos/1"
-          }
-        },
-        {
-          "name": "RF12 - Projeto inexistente (404)",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/projetos/99999"
-          }
-        },
-        {
-          "name": "Atualizar projeto",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/projetos/1",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"nome\": \"Projeto Web Atualizado\",\n  \"descricao\": \"Descrição nova do projeto\"\n}"
-            }
-          }
-        },
-        {
-          "name": "Remover projeto",
-          "request": {
-            "method": "DELETE",
-            "url": "{{baseUrl}}/projetos/1"
-          }
+      "name": "1. Criar projeto (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/projetos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Projeto Web\",\n  \"descricao\": \"Atividade de Programação Web Backend\"\n}"
         }
-      ]
+      }
     },
     {
-      "name": "Responsável",
-      "item": [
-        {
-          "name": "RF03 - Cadastrar responsável",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/responsaveis",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"nome\": \"Igor Lima\",\n  \"email\": \"igor@email.com\"\n}"
-            }
-          }
-        },
-        {
-          "name": "RF04 - Listar responsáveis",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/responsaveis"
-          }
-        },
-        {
-          "name": "Consultar responsável por id",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/responsaveis/1"
-          }
-        },
-        {
-          "name": "Atualizar responsável",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/responsaveis/1",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"nome\": \"Igor Lima Silva\",\n  \"email\": \"igor.silva@email.com\"\n}"
-            }
-          }
-        },
-        {
-          "name": "Remover responsável",
-          "request": {
-            "method": "DELETE",
-            "url": "{{baseUrl}}/responsaveis/1"
-          }
+      "name": "2. Criar responsável (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/responsaveis",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Igor Lima\",\n  \"email\": \"igor@email.com\"\n}"
         }
-      ]
+      }
     },
     {
-      "name": "Tarefa",
-      "item": [
-        {
-          "name": "RF05 - Cadastrar tarefa",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/tarefas",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"titulo\": \"Montar relatório\",\n  \"descricao\": \"Relatório semanal do projeto\",\n  \"prioridade\": \"ALTA\",\n  \"prazo\": \"2026-09-25\",\n  \"projetoId\": 1,\n  \"responsavelId\": 1\n}"
-            }
-          }
-        },
-        {
-          "name": "RF06 - Listar tarefas",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/tarefas"
-          }
-        },
-        {
-          "name": "RF07 - Filtrar por status NOVA",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/tarefas?status=NOVA"
-          }
-        },
-        {
-          "name": "RF07 - Filtrar por status e projeto",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/tarefas?status=NOVA&projetoId=1"
-          }
-        },
-        {
-          "name": "RF08 - Consultar tarefa por id",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/tarefas/1"
-          }
-        },
-        {
-          "name": "RF12 - Tarefa inexistente (404)",
-          "request": {
-            "method": "GET",
-            "url": "{{baseUrl}}/tarefas/99999"
-          }
-        },
-        {
-          "name": "RF09 - Atualizar tarefa",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/tarefas/1",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"titulo\": \"Montar relatório\",\n  \"descricao\": \"Relatório semanal do projeto\",\n  \"status\": \"EM_ANDAMENTO\",\n  \"prioridade\": \"ALTA\",\n  \"prazo\": \"2026-09-25\",\n  \"projetoId\": 1,\n  \"responsavelId\": 1\n}"
-            }
-          }
-        },
-        {
-          "name": "RF11 - Concluir tarefa",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "url": "{{baseUrl}}/tarefas/1",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"titulo\": \"Montar relatório\",\n  \"descricao\": \"Relatório semanal do projeto\",\n  \"status\": \"CONCLUIDA\",\n  \"prioridade\": \"ALTA\",\n  \"prazo\": \"2026-09-25\",\n  \"projetoId\": 1,\n  \"responsavelId\": 1\n}"
-            }
-          }
-        },
-        {
-          "name": "RF10 - Remover tarefa",
-          "request": {
-            "method": "DELETE",
-            "url": "{{baseUrl}}/tarefas/1"
-          }
+      "name": "3. Criar tarefa 1 - prioridade ALTA",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/tarefas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Montar relatório\",\n  \"descricao\": \"Relatório semanal do projeto\",\n  \"prioridade\": \"ALTA\",\n  \"prazo\": \"2026-09-25\",\n  \"projetoId\": 1\n}"
         }
-      ]
+      }
+    },
+    {
+      "name": "3. Criar tarefa 2 - prioridade MEDIA",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/tarefas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Revisar enunciado\",\n  \"descricao\": \"Conferir os requisitos do PDF\",\n  \"prioridade\": \"MEDIA\",\n  \"prazo\": \"2026-09-28\",\n  \"projetoId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "3. Criar tarefa 3 - prioridade BAIXA",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/tarefas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Organizar commits\",\n  \"descricao\": \"Deixar o histórico descritivo\",\n  \"prioridade\": \"BAIXA\",\n  \"prazo\": \"2026-09-30\",\n  \"projetoId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Listar tarefas (3 com status NOVA)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas"
+      }
+    },
+    {
+      "name": "5. Filtrar por status NOVA",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas?status=NOVA"
+      }
+    },
+    {
+      "name": "5. Filtrar por status CONCLUIDA (deve reduzir)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas?status=CONCLUIDA"
+      }
+    },
+    {
+      "name": "6. Consultar tarefa pelo id",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas/1"
+      }
+    },
+    {
+      "name": "7. Concluir tarefa (preenche concluidaEm)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/tarefas/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Montar relatório\",\n  \"descricao\": \"Relatório semanal do projeto\",\n  \"status\": \"CONCLUIDA\",\n  \"prioridade\": \"ALTA\",\n  \"prazo\": \"2026-09-25\",\n  \"projetoId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "8. Atribuir responsável à tarefa",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/tarefas/2",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Revisar enunciado\",\n  \"descricao\": \"Conferir os requisitos do PDF\",\n  \"status\": \"NOVA\",\n  \"prioridade\": \"MEDIA\",\n  \"prazo\": \"2026-09-28\",\n  \"projetoId\": 1,\n  \"responsavelId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "8. Conferir responsável na consulta",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas/2"
+      }
+    },
+    {
+      "name": "9. Remover tarefa (204)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/tarefas/3"
+      }
+    },
+    {
+      "name": "10. Consultar tarefa removida (404)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/tarefas/3"
+      }
     }
   ]
 }
