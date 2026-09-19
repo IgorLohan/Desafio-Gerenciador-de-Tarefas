@@ -1,0 +1,153 @@
+{
+  "projetos": [
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/projeto",
+      "body": {
+        "nome": "Projeto Web",
+        "descricao": "Atividade de Programação Web Backend"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/projeto",
+      "body": {
+        "nome": "App de Finanças",
+        "descricao": "Controle de gastos pessoais e metas mensais"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/projeto",
+      "body": {
+        "nome": "Loja Virtual",
+        "descricao": "E-commerce de produtos eletrônicos"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/projeto",
+      "body": {
+        "nome": "Portal da Faculdade",
+        "descricao": "Área do aluno com notas, faltas e horários"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/projeto",
+      "body": {
+        "nome": "Agenda Médica",
+        "descricao": "Sistema de consultas e prontuário básico"
+      }
+    }
+  ],
+  "responsaveis": [
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/responsavel",
+      "body": {
+        "nome": "Igor Lima",
+        "email": "igor@email.com"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/responsavel",
+      "body": {
+        "nome": "Ana Souza",
+        "email": "ana.souza@email.com"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/responsavel",
+      "body": {
+        "nome": "Carlos Mendes",
+        "email": "carlos.mendes@email.com"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/responsavel",
+      "body": {
+        "nome": "Beatriz Rocha",
+        "email": "beatriz.rocha@email.com"
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/responsavel",
+      "body": {
+        "nome": "Diego Martins",
+        "email": "diego.martins@email.com"
+      }
+    }
+  ],
+  "tarefas": [
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/tarefa",
+      "body": {
+        "titulo": "Montar relatório",
+        "descricao": "Relatório semanal do projeto",
+        "status": "PENDENTE",
+        "prioridade": "ALTA",
+        "prazo": "2026-09-25",
+        "projetoId": 1,
+        "responsavelId": 1
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/tarefa",
+      "body": {
+        "titulo": "Criar endpoints de login",
+        "descricao": "Implementar autenticação básica da API",
+        "status": "EM_ANDAMENTO",
+        "prioridade": "ALTA",
+        "prazo": "2026-09-28",
+        "projetoId": 2,
+        "responsavelId": 2
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/tarefa",
+      "body": {
+        "titulo": "Cadastrar produtos da loja",
+        "descricao": "Incluir nome, preço e estoque inicial",
+        "status": "PENDENTE",
+        "prioridade": "MEDIA",
+        "prazo": "2026-10-02",
+        "projetoId": 3,
+        "responsavelId": 3
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/tarefa",
+      "body": {
+        "titulo": "Tela de notas do aluno",
+        "descricao": "Listar notas por disciplina no portal",
+        "status": "PENDENTE",
+        "prioridade": "MEDIA",
+        "prazo": "2026-10-05",
+        "projetoId": 4,
+        "responsavelId": 4
+      }
+    },
+    {
+      "metodo": "POST",
+      "url": "http://localhost:8080/tarefa",
+      "body": {
+        "titulo": "Agendar consulta de retorno",
+        "descricao": "Marcar retorno do paciente no sistema",
+        "status": "CONCLUIDA",
+        "prioridade": "BAIXA",
+        "prazo": "2026-09-20",
+        "projetoId": 5,
+        "responsavelId": 5
+      }
+    }
+  ]
+}

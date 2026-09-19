@@ -152,7 +152,7 @@ Para `GET` e `DELETE`, não precisa de Body. Só método + URL + **Send**.
 
 Cadastre **projeto** e **responsável** primeiro. Depois use os `id` que voltaram para criar a tarefa.
 
-Os JSONs abaixo servem no Insomnia e no Postman.
+Os JSONs abaixo servem no Insomnia e no Postman. Todos eles também estão no arquivo `exemplos-api.json` — copie só o conteúdo de `body`.
 
 ### Projeto
 
