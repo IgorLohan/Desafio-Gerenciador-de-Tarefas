@@ -23,7 +23,7 @@ public class TarefaServiceImpl implements TarefaService {
         Tarefa paraSalvar = new Tarefa(
                 request.titulo(),
                 request.descricao(),
-                request.status(),
+                StatusTarefa.NOVA,
                 request.prioridade(),
                 request.prazo(),
                 buscarProjeto(request.projetoId()),

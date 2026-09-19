@@ -68,7 +68,7 @@ Por que Request e Response separados da entidade? Para não expor o banco direto
 
 Enums da tarefa:
 
-- **Status:** `PENDENTE`, `EM_ANDAMENTO`, `CONCLUIDA`
+- **Status:** `NOVA`, `EM_ANDAMENTO`, `CONCLUIDA`
 - **Prioridade:** `BAIXA`, `MEDIA`, `ALTA`
 
 ## Como rodar o projeto
@@ -178,15 +178,14 @@ Os JSONs abaixo servem no Insomnia e no Postman. Todos eles também estão no ar
 
 ### Tarefa
 
-`POST http://localhost:8080/tarefa`
+`POST http://localhost:8080/tarefas`
 
-Troque `projetoId` e `responsavelId` pelos ids reais. `responsavelId` pode ser omitido.
+Troque `projetoId` e `responsavelId` pelos ids reais. `responsavelId` pode ser omitido. O `status` nasce como `NOVA` e a data de criação é preenchida pelo sistema.
 
 ```json
 {
   "titulo": "Montar relatório",
   "descricao": "Relatório semanal do projeto",
-  "status": "PENDENTE",
   "prioridade": "ALTA",
   "prazo": "2026-09-25",
   "projetoId": 1,
@@ -218,20 +217,21 @@ A base é sempre `http://localhost:8080`.
 | PUT | `/responsavel/1` | Atualiza |
 | DELETE | `/responsavel/1` | Exclui (só se não tiver tarefa) |
 
-### Tarefa — `/tarefa`
+### Tarefa — `/tarefas`
 
 | Método | URL | O que faz |
 |---|---|---|
-| POST | `/tarefa` | Cadastra |
-| GET | `/tarefa` | Lista todas |
-| GET | `/tarefa/1` | Busca pelo id |
-| PUT | `/tarefa/1` | Atualiza |
-| DELETE | `/tarefa/1` | Exclui |
+| POST | `/tarefas` | Cadastra (status `NOVA` automático) |
+| GET | `/tarefas` | Lista todas |
+| GET | `/tarefas/1` | Busca pelo id |
+| PUT | `/tarefas/1` | Atualiza (pode trocar status e responsável) |
+| DELETE | `/tarefas/1` | Exclui |
 
 Filtros opcionais na listagem:
 
 ```
-GET http://localhost:8080/tarefa?status=PENDENTE&prioridade=ALTA&projetoId=1
+GET http://localhost:8080/tarefas?status=NOVA
+GET http://localhost:8080/tarefas?status=NOVA&projetoId=1
 ```
 
 ## Relacionamento das tabelas

@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/tarefa")
+@RequestMapping({"/tarefas", "/tarefa"})
 public class TarefaController {
 
     private final TarefaService service;
@@ -25,9 +25,11 @@ public class TarefaController {
             @RequestParam(required = false) StatusTarefa status,
             @RequestParam(required = false) PrioridadeTarefa prioridade,
             @RequestParam(required = false) Long projetoId,
+            @RequestParam(name = "projeto", required = false) Long projeto,
             @RequestParam(required = false) Long responsavelId
     ) {
-        return service.listarTarefasCadastradas(status, prioridade, projetoId, responsavelId);
+        Long idDoProjeto = projetoId != null ? projetoId : projeto;
+        return service.listarTarefasCadastradas(status, prioridade, idDoProjeto, responsavelId);
     }
 
     @GetMapping("/{id}")

@@ -70,7 +70,7 @@ public class Tarefa {
             criadaEm = LocalDateTime.now();
         }
         if (status == null) {
-            status = StatusTarefa.PENDENTE;
+            status = StatusTarefa.NOVA;
         }
         if (prioridade == null) {
             prioridade = PrioridadeTarefa.MEDIA;
